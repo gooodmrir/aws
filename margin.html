@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        html, body {
+            height: 100vh;
+        }
+        body {
+            text-align: center;
+        }
+        div:not(.big, .big > div, hr + div, hr + div div) {
+            margin-bottom: 20px;
+            height: 100px;
+            width: 100px;
+            border: 5px solid blue;
+            padding: 5px;
+            background-color: red;
+        }
+        .nomal {
+            position: relative;
+            margin: 0 auto;
+            /* top: calc(50% - 50px); */
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        /* .nomal {
+            box-sizing: content-box;
+        }
+        .box {
+            box-sizing: border-box;
+        } */
+        .big {
+            border: 1px solid green;
+        }
+        .big > div {
+            width: 200px;
+            height: 100px;
+            margin: 30px;
+        }
+        .big > div:first-child {
+            background-color: red;
+            text-align: left;
+            padding: 25px 10px 10px 5px;
+        }
+        .big > div:nth-child(2) {
+            background-color: green;
+            margin-bottom: 100px;
+        }
+        .big > div:last-child {
+            background-color: blue;
+        }
+        span {
+            display: inline-block;
+            border: 1px solid red;
+            width: 100px;
+            height: 100px;
+            /* display: none; */
+            /* margin: 100px;
+            padding: 100px; */
+        }
+        nav > ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav > ul > li {
+            display: inline-block;
+            border: 1px solid #333;
+            padding: 5px 25px;
+            margin: 10px -3px;
+        }
+        hr + div > img {
+            width: 250px;
+            float: left;
+            margin-right: 25px;
+            margin-bottom: 25px;
+        }
+        hr + div > p {
+            text-align: justify;
+        }
+        hr + div > div {
+            clear: both;
+        } 
+    </style>
+</head>
+<body>
+    <span>text</span>
+    <div class="nomal">text</div>
+    <div class="box"></div>
+    <div class="big">
+        <div>test</div>
+        <div></div>
+        <div></div>
+    </div>
+    <nav>
+        <ul>
+            <li>menu 1</li>
+            <li>menu 2</li>
+            <li>menu 3</li>
+            <li>menu 4</li>
+        </ul>
+    </nav>
+    <hr>
+    <div>
+        <img src="/img/a.png" alt="cat">
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo</p>
+        <div>test</div>
+    </div>
+</body>
+</html>
+
+

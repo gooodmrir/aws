@@ -1,0 +1,36 @@
+* {
+    box-suzing: 
+}
+
+#wrap *{
+    border: 5px solid;
+    padding: 10px;
+}
+header,main {
+    margin-bottom: 20px;
+}
+main{
+    border:nne !important;
+    padding: 0 !important;
+    overflow: hidden;
+}
+main > section{
+    float: left
+}
+main > section:first-child{
+    width: 75%;
+    margin-right: 20px;
+}
+
+main > section:last-child{
+    width: calc(25% - 80px);
+
+}
+
+main > section {
+    height: 550px;
+}
+
+main > section > secton{
+    margin-bottom: 20px;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div:not(.parents) {
+            width: 100px;
+            height: 100px;
+        }
+        /* div.parents {
+            overflow: hidden;
+        } */
+        div.parents::after {
+            clear: both;
+            display: table;
+            content: "";
+        }
+        div.box1, div.box2 {
+            width: 50%;
+            float: left;
+        }
+        div.box1 {
+            background-color: red;
+        }
+        div.box2 {
+            background-color: blue;
+        }
+        div.box3 {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="parents">
+        <div class="box1"></div>
+        <div class="box2"></div>
+    </div>
+    <div class="box3"></div>
+</body>
+</html>
