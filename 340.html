@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #smenu {
+            display: none;
+        }
+        #burger {
+            position: relative;
+            width: 25px;
+            cursor: pointer;
+            left: 0;
+            transition: .7s;
+        }
+        #burger > div {
+            height: 5px;
+            background-color: #000;
+            margin-bottom: 3px;
+            transition: .7s;
+        }
+        #side-menu {
+            position: absolute;
+            top: 0;
+            left: -150px;
+            height: 100vh;
+            width: 150px;
+            background-color: pink;
+            transition: .7s;
+        }
+        #smenu:checked + #wrap #burger {
+            left: 150px;
+        }
+        #smenu:checked + #wrap #burger > div {
+            background-color: #f00;
+        }
+        #smenu:checked ~ #side-menu {
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <input type="checkbox" id="smenu">
+    <div id="wrap">
+        <header>
+            <label for="smenu">
+                <div id="burger">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </label>
+        </header>
+    </div>
+    <div id="side-menu">
+        <ul>
+            <li>HOME</li>
+            <li>ABOUT</li>
+            <li>LOGIN</li>
+        </ul>
+    </div>
+</body>
+</html>
+    

@@ -5,39 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        div[id] {
-            padding; 50px;
-        }
-        /*body > div:first-child{
-            overflow: hidden;
-        }*/
-        body > div:nth-child(2)::after {
-            clear: both;
-            content:"";
-            display: table;
-        }
-        #boxl{
-            background-color:#ffd800;
-            float: left;
-        }
-        #box2{
-            background-color: #0094ff;
-            float: left;
-            width: calc(100% - 240.81px);
-        }
-        #box3{
-            background-color: #00ff21;           
-        }
-        #box4{
-            background-color: #a874ff;
-        }
+      ul a {
+        text-decoration: none;
+        color: black;
+        display: block;
+        padding: 5px 15px;
+        margin-bottom: 10px;
+      }
+      ul a:hover {
+        background: black;
+        color: white;
+      }
+      ul a:active {
+        background: red;
+        color: white;
+      }
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        padding-left: 25px;
+        width: 100%;
+        border-bottom: 1px solid;
+      }
+      ul > li {
+        display: inline-block;
+      }
+      #intro:target {
+        background: red;
+        color: #fff;
+      }
+      #room:target {
+        background: blue;
+        color: #fff;
+      }
     </style>
 </head>
 <body>
-    <div id="box3">박스3</div>
-    <div>
-      <div id="box1">박스1</div>
-      <div id="box2">박스2</div>
-    </div>
+    <ul>
+      <li><a href="#intro">이용 안내</a></li>
+      <li><a href="#room">객실 소개</a></li>
+      <li><a href="#">예약 방법 및 요금</a></li>
+      <li><a href="#">예약하기</a></li>
+    </ul>
+    <div id=intro><h1>INTRO</h1></div>
+    <div id=room><h1>ROOM</h1></div>
 </body>
 </html>
+이름 :
+이름
+1:1 질문

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div[class] {
+            width: 100px;
+            height: 100px;
+            border: 1px solid;
+            display: inline-block;
+        }
+        div[class] > div {
+            background-color: orange;
+            width: 100%;
+            height: 100%;
+            transition: 1s;
+        }
+        div.movx:hover > div{
+            transform: translateX(50px);
+        }
+        div.movy:hover > div{
+            transform: translateY(50px);
+        }
+        div.movxy:hover > div{
+            transform: translate(50px, 50px);
+        }
+        div.movz {
+            perspective: 10px;
+        }
+        div.movz:hover > div{
+            transform: translate3d(1px, 1px, -10px);
+        }
+
+        div.scalex:hover > div {
+            transform: scaleX(2);
+        }
+        div.scaley:hover > div {
+            transform: scaleY(1.5);
+        }
+        div.scalexy:hover > div {
+            transform: scale(0.7, 0.7);
+        }
+        div.scalez {
+            transform-style: preserve-3d;
+            perspective: 10px;
+        }
+        div.scalez:hover > div {
+            transform: scalez(12);
+        }
+
+        div.rotatex:hover > div {
+            transform: rotate(360deg);
+        }
+        div.rotatey:hover > div {
+            transform: rotate(-40deg);
+        }
+        div.rotatez {
+            perspective: 100px;
+        }
+        div.rotatez:hover > div{
+            /* transform: rotateX(360deg); */
+            transform: rotate3d(1, 1, -1, 360deg);
+        }
+        div.skewx:hover > div{
+            transform: skewX(50deg);
+        }
+        div.skewy:hover > div{
+            transform: skewY(50deg);
+        }
+        #box {
+            width: 100px;
+            height: 100px;
+            perspective: 550px;
+            transform-style: preserve-3d;
+            transition-property: all;
+            transition-timing-function: cubic-bezier(.17,.67,1,-0.08);
+            transition-duration: 1000ms;
+        }
+        #box:hover {
+            transform: rotate3d(1, 1, 1, 360deg);
+        }
+        #box > div {
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.7);
+            width: 100%;
+            height: 100%;
+            color: white;
+            text-align: center;
+            line-height: 100px;
+            font-size: 35px;
+        }
+        #box > div:first-child {
+            transform: translateZ(50px);
+            background-color: rgba(255, 0, 0, 0.3);
+        }
+        #box > div:nth-child(2) {
+            transform: rotateY(180deg) translateZ(50px);
+            background-color: rgba(0, 255, 0, 0.3);
+        }
+        #box > div:nth-child(3) {
+            transform: rotateY(90deg) translateZ(50px);
+            background-color: rgba(0, 0, 255, 0.3);
+        }
+        #box > div:nth-child(4) {
+            transform: rotateY(-90deg) translateZ(50px);
+            background-color: rgba(100, 100, 0, 0.3);
+        }
+        #box > div:nth-child(5) {
+            transform: rotateX(90deg) translateZ(50px);
+            background-color: rgba(100, 0, 100, 0.3);
+
+        }
+        #box > div:nth-child(6) {
+            transform: rotateX(-90deg) translateZ(50px);
+            background-color: rgba(0, 100, 100, 0.3);
+
+        }
+        #timing {
+            margin-top: 25px;
+            overflow: hidden; 
+            border: 1px solid;
+            height: 750px;          
+        }
+        #timing > div {
+            float: left;
+            margin-left: 25px;
+            width: 100px;
+            height: 50px;
+            background-color:blue;
+            color: white;
+            border-radius: 5px;
+            transition-duration: 1s;
+        }
+        #timing:hover > div {
+            height: 100%;
+        }
+        #timing > div:nth-child(1) {
+            transition-timing-function: ease;
+            transition-delay: 0;
+        }
+        #timing > div:nth-child(2) {
+            transition-timing-function: linear;
+            transition-delay: 0.2s;
+        }
+        #timing > div:nth-child(3) {
+            transition-timing-function: ease-in;
+            transition-delay: 0.4s;
+        }
+        #timing > div:nth-child(4) {
+            transition-timing-function: ease-out;
+            transition-delay: 0.6s;
+        }
+        #timing > div:nth-child(5) {
+            transition-timing-function: ease-in-out;
+            transition-delay: 0.8s;
+        }
+        #timing > div:nth-child(6) {
+            transition-timing-function: cubic-bezier(.47,1.64,.41,.8);
+            transition-delay: 1s;
+        }
+        #timing > div:nth-child(7) {
+            transition: height color2s ease-in 1.2s;
+        }
+    </style>
+</head>
+<body>
+    <div class="movx">
+        <div></div>
+    </div>
+    <div class="movy">
+        <div></div>
+    </div>
+    <div class="movxy">
+        <div></div>
+    </div>
+    <div class="movz">
+        <div></div>
+    </div>
+    <hr>
+    <div class="scalex">
+        <div></div>
+    </div>
+    <div class="scaley">
+        <div></div>
+    </div>
+    <div class="scalexy">
+        <div></div>
+    </div>
+    <div class="scalez">
+        <div></div>
+    </div>
+    <hr>
+    <div class="rotatex">
+        <div></div>
+    </div>
+    <div class="rotatey">
+        <div></div>
+    </div>
+    <div class="rotatez">
+        <div></div>
+    </div>
+    <hr>
+    <div class="skewx">
+        <div></div>
+    </div>
+    <div class="skewy">
+        <div></div>
+    </div>
+    <hr>
+    <div id="box">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </div>
+    <div id="timing">
+       <div>ease</div> 
+       <div>linear</div> 
+       <div>ease-in</div> 
+       <div>ease-out</div> 
+       <div>ease-in-out</div>
+       <div>cubic</div> 
+       <div>all</div> 
+    </div>
+</body>
+</html>
